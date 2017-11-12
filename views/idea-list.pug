@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1 Hello!
+    if ideas.length
+        p Here are the ideas:
+        table
+            thead
+                td ID
+                td Summary
+                td Tags
+            each idea in ideas
+                tr
+                    td #{idea.id}
+                    td #{idea.summary}
+                    td #{idea.tags}
+
+        pre= JSON.stringify(ideas, null, 2)
+    else
+        p There's no one yet :(
+    script.
+        console.log(!{JSON.stringify(ideas)})

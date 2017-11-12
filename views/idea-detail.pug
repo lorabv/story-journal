@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    if idea
+        h1 Hello #{idea.summary}!
+        p Here are your full details:
+        pre= JSON.stringify(idea, null, 2)
+    else
+        h1 There's no such idea!
+    script.
+        console.log(!{JSON.stringify(idea)})

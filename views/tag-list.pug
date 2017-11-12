@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1 Hello!
+    if tags.length
+        p Here are the tags:
+        table
+            thead
+                td ID
+                td Name
+                td Ideas
+            each tag in tags
+                tr
+                    td #{tag.id}
+                    td #{tag.name}
+                    td #{tag.ideas}
+
+        pre= JSON.stringify(tags, null, 2)
+    else
+        p There's no one yet :(
+    script.
+        console.log(!{JSON.stringify(tags)})
